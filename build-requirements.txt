@@ -1,0 +1,4 @@
+promebuilder==0.1.*
+sphinx
+nose
+coverage
