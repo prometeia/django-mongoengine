@@ -23,6 +23,7 @@ METADATA.update(dict(
     author_email=__email__,
     packages=find_packages(exclude=('doc', 'docs', 'tests')),
     include_package_data=True,
+    test_suite='nose.collector',
 ))
 
 
