@@ -1,3 +1,6 @@
+Forked from django-mongoengine project.
+* added back-support to django <1.8 (tested only with 1.7.3)
+
 ==================
 Django-MongoEngine
 ==================
