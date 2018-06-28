@@ -44,7 +44,7 @@ def builder(envlabel, condaenvb="base") {
         condashellcmd("conda create -y -n test_${CONDAENV} python=2.7", condaenvb)
         condashellcmd("conda install -y --file build-requirements.txt", "test_${CONDAENV}")
         condashellcmd("conda install -y --file requirements.txt", "test_${CONDAENV}")
-        condashellcmd("python setup.py pytest", "test_${CONDAENV}")
+        condashellcmd("python setup_prometeia.py pytest", "test_${CONDAENV}")
         condashellcmd("conda env remove -y -n test_${CONDAENV}", condaenvb)
       }
       **/
@@ -52,7 +52,7 @@ def builder(envlabel, condaenvb="base") {
         echo "Building on ${envlabel}, conda environment ${condaenvb}"
         unstash "source"
         script {
-          writeFile file: 'buildoutput', text: condashellcmd("python setup.py bdist_conda", condaenvb, true).trim()
+          writeFile file: 'buildoutput', text: condashellcmd("python setup_prometeia.py bdist_conda", condaenvb, true).trim()
           writeFile file: 'packagename', text: readFile('buildoutput').split(" ")[-1]
         }
         echo "BUILD OUTPUT: \n\n ================ \n" + readFile('buildoutput') + "\n ================ \n"

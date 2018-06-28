@@ -14,3 +14,20 @@ env/
 .pydevproject
 tests/bugfix.py
 *.egg-info
+
+# VSCode
+settings.json
+.vscode/launch.json
+commonlib/logs/*.log
+dist
+.vagrant
+
+# Build artifacts
+channel
+version
+branch
+buildnum
+build
+build_trigger_number
+win-*/
+linux-*/
