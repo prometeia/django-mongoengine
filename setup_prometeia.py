@@ -21,7 +21,7 @@ METADATA.update(dict(
     license=__license__,
     author=__author__,
     author_email=__email__,
-    packages=find_packages(exclude=('doc', 'docs', 'tests')),
+    packages=find_packages(exclude=('doc', 'docs')),
     include_package_data=True,
     test_suite='nose.collector',
 ))
