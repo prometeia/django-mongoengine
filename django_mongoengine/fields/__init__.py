@@ -39,5 +39,14 @@ def patch_mongoengine_field(field_name):
         setattr(field, "auto_created", False)
 
 
+
+def patch_mongoengine_objectidfield():
+    from mongoengine import common
+    field = common._import_class("ObjectIdField")
+    setattr(field, "verbose_name", None)
+    setattr(field, "help_text", None)
+    
+
 for f in ["StringField", "ObjectIdField"]:
     patch_mongoengine_field(f)
+    patch_mongoengine_objectidfield()
