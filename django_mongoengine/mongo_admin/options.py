@@ -3,7 +3,10 @@ from functools import reduce, partial
 
 from django import forms
 from django.forms.formsets import all_valid
-from django.urls import reverse
+try:
+    from django.urls import reverse
+except ImportError:
+    from django.core.urlresolvers import reverse
 from django.contrib.admin.exceptions import DisallowedModelAdminToField
 from django.contrib.admin import widgets, helpers
 from django.contrib.admin.utils import (

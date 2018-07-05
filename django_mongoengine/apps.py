@@ -12,8 +12,9 @@ class DjangoMongoEngineConfig(AppConfig):
     verbose_name = "Django-MongoEngine"
 
     def ready(self):
-        if not hasattr(settings, 'MONGODB_DATABASES'):
-            raise ImproperlyConfigured("Missing `MONGODB_DATABASES` in settings.py")
+        return 
+        #if not hasattr(settings, 'MONGODB_DATABASES'):
+        #    raise ImproperlyConfigured("Missing `MONGODB_DATABASES` in settings.py")
 
-        for alias, conn_settings in settings.MONGODB_DATABASES.items():
-            connection.register_connection(alias, **conn_settings)
+        #for alias, conn_settings in settings.MONGODB_DATABASES.items():
+        #    connection.register_connection(alias, **conn_settings)
