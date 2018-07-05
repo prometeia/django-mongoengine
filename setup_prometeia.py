@@ -26,6 +26,10 @@ METADATA.update(dict(
     test_suite='nose.collector',
 ))
 
+# Non importabile senza django configurato
+if METADATA.get('conda_import_tests'):
+    METADATA['conda_import_tests'] = False
+
 
 if __name__ == '__main__':
     setup(METADATA)
