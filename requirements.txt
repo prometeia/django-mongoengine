@@ -1,2 +1,2 @@
-django>=1.11, < 2
+django==1.7.3  # only supported
 mongoengine>=0.14
